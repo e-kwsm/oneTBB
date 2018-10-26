@@ -146,7 +146,7 @@ VERSION_FLAGS=$(CPLUS) $(CPLUS_FLAGS) $(CXX_ONLY_FLAGS) $(INCLUDES)
 
 ifneq (,$(TBB.MANIFEST))
 $(TBB.MANIFEST):
-	cmd /C "echo #include ^<stdio.h^> >tbbmanifest.c"
+	cmd /C "echo #include ^<cstdio^> >tbbmanifest.c"
 	cmd /C "echo int main(){return 0;} >>tbbmanifest.c"
 	cl /nologo $(C_FLAGS) tbbmanifest.c
 

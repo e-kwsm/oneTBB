@@ -70,7 +70,7 @@ endif
 ifeq (ia64,$(arch))
     ITT_NOTIFY =
 # Position-independent code (PIC) is a must on IA-64 architecture, even for regular (not shared) executables
-# strict-ansi does not work with <signal.h> on RHEL 4 AS
+# strict-ansi does not work with <csignal> on RHEL 4 AS
     CPLUS_FLAGS += $(PIC_KEY) $(if $(findstring cc3.,$(runtime)),-ansi,-strict-ansi)
 else
 # For ICC 16 and older, in std=c++14 mode -strict-ansi does not work with GNU C++ library headers
