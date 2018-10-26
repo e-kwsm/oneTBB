@@ -26,8 +26,8 @@
 #if !defined(__TBB_HardwareConcurrency)
 
 #include "dynamic_link.h"
-#include <stdio.h>
-#include <limits.h>
+#include <cstdio>
+#include <climits>
 
 #if _WIN32||_WIN64
 #include "tbb/machine/windows_api.h"
@@ -38,14 +38,14 @@
 #include <unistd.h>
 #if __linux__
 #include <sys/sysinfo.h>
-#include <string.h>
+#include <cstring>
 #include <sched.h>
-#include <errno.h>
+#include <cerrno>
 #elif __sun
 #include <sys/sysinfo.h>
 #elif __FreeBSD__
-#include <errno.h>
-#include <string.h>
+#include <cerrno>
+#include <cstring>
 #include <sys/param.h>  // Required by <sys/cpuset.h>
 #include <sys/cpuset.h>
 #endif

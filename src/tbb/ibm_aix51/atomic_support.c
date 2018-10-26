@@ -18,7 +18,7 @@
 
 */
 
-#include <stdint.h>
+#include <cstdint>
 #include <sys/atomic_op.h>
 
 /* This file must be compiled with gcc.  The IBM compiler doesn't seem to

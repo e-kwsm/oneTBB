@@ -21,7 +21,7 @@
 #if _WIN32||_WIN64
 #include <process.h>        // _beginthreadex()
 #endif
-#include <errno.h>
+#include <cerrno>
 #include "tbb_misc.h"       // handle_win_error()
 #include "tbb/tbb_stddef.h"
 #include "tbb/tbb_thread.h"

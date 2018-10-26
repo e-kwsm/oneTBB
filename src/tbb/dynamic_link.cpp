@@ -41,10 +41,10 @@
 #endif
 #else /* _WIN32 */
     #include <dlfcn.h>
-    #include <string.h>
+    #include <cstring>
     #include <unistd.h>
-    #include <limits.h>
-    #include <stdlib.h>
+    #include <climits>
+    #include <cstdlib>
 #endif /* _WIN32 */
 
 #if __TBB_WEAK_SYMBOLS_PRESENT && !__TBB_DYNAMIC_LOAD_ENABLED

@@ -25,9 +25,9 @@
 
 // include headers for required function declarations
 #include <cstdlib>
-#include <stdio.h>
-#include <string.h>
-#include <stdarg.h>
+#include <cstdio>
+#include <cstring>
+#include <cstdarg>
 #if _MSC_VER
 #include <crtdbg.h>
 #endif

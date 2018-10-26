@@ -68,7 +68,7 @@
 
 #if __TBB_STATISTICS
 
-#include <string.h>  // for memset
+#include <cstring>   // for memset
 
 //! Dump counters into stdout as well.
 /** By default statistics counters are written to the file "statistics.txt" only. **/

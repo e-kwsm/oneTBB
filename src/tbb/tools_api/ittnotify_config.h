@@ -82,11 +82,11 @@
 #define UNICODE
 #endif
 
-#include <stddef.h>
+#include <cstddef>
 #if ITT_PLATFORM==ITT_PLATFORM_WIN
 #include <tchar.h>
 #else  /* ITT_PLATFORM==ITT_PLATFORM_WIN */
-#include <stdint.h>
+#include <cstdint>
 #if defined(UNICODE) || defined(_UNICODE)
 #include <wchar.h>
 #endif /* UNICODE || _UNICODE */

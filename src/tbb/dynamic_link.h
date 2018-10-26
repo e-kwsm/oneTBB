@@ -40,7 +40,7 @@
 #define CLOSE_INTERNAL_NAMESPACE }}
 #endif /* OPEN_INTERNAL_NAMESPACE */
 
-#include <stddef.h>
+#include <cstddef>
 #if _WIN32
 #include "tbb/machine/windows_api.h"
 #endif /* _WIN32 */

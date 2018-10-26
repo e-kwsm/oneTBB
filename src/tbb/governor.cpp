@@ -18,8 +18,8 @@
 
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include "governor.h"
 #include "tbb_main.h"
 #include "scheduler.h"

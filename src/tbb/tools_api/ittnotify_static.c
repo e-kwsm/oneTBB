@@ -23,14 +23,14 @@
 #if ITT_PLATFORM==ITT_PLATFORM_WIN
 #define PATH_MAX 512
 #else /* ITT_PLATFORM!=ITT_PLATFORM_WIN */
-#include <limits.h>
+#include <climits>
 #include <dlfcn.h>
-#include <errno.h>
+#include <cerrno>
 #endif /* ITT_PLATFORM==ITT_PLATFORM_WIN */
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstdarg>
+#include <cstring>
 
 #define INTEL_NO_MACRO_BODY
 #define INTEL_ITTNOTIFY_API_PRIVATE
@@ -55,7 +55,7 @@ static const char* ittnotify_lib_name = "libittnotify.dylib";
 
 #ifdef __ANDROID__
 #include <android/log.h>
-#include <stdio.h>
+#include <cstdio>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>

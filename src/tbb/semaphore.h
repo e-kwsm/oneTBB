@@ -35,7 +35,7 @@
 #else
 #include <semaphore.h>
 #ifdef TBB_USE_DEBUG
-#include <errno.h>
+#include <cerrno>
 #endif
 #endif /*_WIN32||_WIN64*/
 

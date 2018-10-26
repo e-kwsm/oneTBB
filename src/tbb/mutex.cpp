@@ -19,7 +19,7 @@
 */
 
 #if _WIN32||_WIN64
-#include <errno.h> // EDEADLK
+#include <cerrno>  // EDEADLK
 #endif
 #include "tbb/mutex.h"
 #include "itt_notify.h"

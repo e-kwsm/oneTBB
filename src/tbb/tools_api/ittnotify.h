@@ -148,11 +148,11 @@ The same ID may not be reused for different instances, unless a previous
 #define UNICODE
 #endif
 
-#include <stddef.h>
+#include <cstddef>
 #if ITT_PLATFORM==ITT_PLATFORM_WIN
 #include <tchar.h>
 #else  /* ITT_PLATFORM==ITT_PLATFORM_WIN */
-#include <stdint.h>
+#include <cstdint>
 #if defined(UNICODE) || defined(_UNICODE)
 #include <wchar.h>
 #endif /* UNICODE || _UNICODE */
@@ -3783,7 +3783,7 @@ ITT_STUBV(ITTAPI, void, stack_callee_leave, (__itt_caller id))
 
 /* ***************************************************************************************************************************** */
 
-#include <stdarg.h>
+#include <cstdarg>
 
 /** @cond exclude_from_documentation */
 typedef enum __itt_error_code

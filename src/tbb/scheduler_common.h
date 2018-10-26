@@ -24,12 +24,12 @@
 #include "tbb/tbb_machine.h"
 #include "tbb/cache_aligned_allocator.h"
 
-#include <string.h>  // for memset, memcpy, memmove
+#include <cstring>   // for memset, memcpy, memmove
 
 #include "tbb_statistics.h"
 
 #if TBB_USE_ASSERT > 1
-#include <stdio.h>
+#include <cstdio>
 #endif /* TBB_USE_ASSERT > 1 */
 
 /* Temporarily change "private" to "public" while including "tbb/task.h".
@@ -81,7 +81,7 @@
 #endif /* DO_TBB_TRACE */
 
 #if !__TBB_CPU_CTL_ENV_PRESENT
-#include <fenv.h>
+#include <cfenv>
 #endif
 
 #if _MSC_VER && !defined(__INTEL_COMPILER)
