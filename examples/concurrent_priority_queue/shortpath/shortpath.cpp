@@ -20,7 +20,7 @@
 
 #include <cstdio>
 #include <vector>
-#include <math.h>
+#include <cmath>
 
 #include "tbb/atomic.h"
 #include "tbb/tick_count.h"
