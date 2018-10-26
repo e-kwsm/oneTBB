@@ -74,12 +74,12 @@
 #ifndef _BZLIB_PRIVATE_H
 #define _BZLIB_PRIVATE_H
 
-#include <stdlib.h>
+#include <cstdlib>
 
 #ifndef BZ_NO_STDIO
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include <cstdio>
+#include <cctype>
+#include <cstring>
 #endif
 
 #include "bzlib.h"

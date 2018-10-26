@@ -124,7 +124,7 @@ typedef
 
 #ifndef BZ_NO_STDIO
 /* Need a definitition for FILE */
-#include <stdio.h>
+#include <cstdio>
 #endif
 
 #ifdef _WIN32
