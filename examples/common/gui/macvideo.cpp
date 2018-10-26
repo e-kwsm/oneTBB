@@ -20,7 +20,7 @@
 
 #include "video.h"
 #include <cassert>
-#include <stdio.h>
+#include <cstdio>
 #include <iostream>
 #include <pthread.h>
 

@@ -23,7 +23,7 @@
 // include GDI+ headers
 #include <gdiplus.h>
 // and another headers
-#include <stdio.h>
+#include <cstdio>
 
 // tag linking library
 #pragma comment(lib, "gdiplus.lib")
