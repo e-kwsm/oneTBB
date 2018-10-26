@@ -51,7 +51,7 @@
  * extvol.cpp - Volume rendering helper routines etc.
  */
 
-#include<stdio.h>
+#include<cstdio>
 
 #include "machine.h"
 #include "types.h"

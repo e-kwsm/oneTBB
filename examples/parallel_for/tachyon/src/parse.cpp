@@ -65,11 +65,11 @@
 
 #endif //__INTEL_COMPILER
 
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h> /* needed for toupper(), macro.. */
+#include <cstdio>
+#include <cmath>
+#include <cstring>
+#include <cstdlib>
+#include <cctype>  /* needed for toupper(), macro.. */
 
 #include "types.h"
 #include "api.h"      /* rendering API */

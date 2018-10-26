@@ -27,9 +27,9 @@
 #define __EVOLUTION_H__
 
 #include "Board.h"
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
 
 #define WIN32_LEAN_AND_MEAN
 

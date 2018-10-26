@@ -57,7 +57,7 @@
  * RGB output.  Probably won't implement any decent checking at this point.
  */ 
 
-#include <stdio.h>
+#include <cstdio>
 #include "machine.h"
 #include "types.h"
 #include "util.h"

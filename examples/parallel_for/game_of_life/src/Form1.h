@@ -22,7 +22,7 @@
 #ifndef __FORM1_H__
 #define __FORM1_H__
 
-#include <time.h>
+#include <ctime>
 #include "Board.h"
 #include "Evolution.h"
 

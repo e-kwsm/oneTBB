@@ -32,7 +32,7 @@
 #else
 #include <iostream>
 #include <sstream>
-#include <time.h>
+#include <ctime>
 #include "Evolution.h"
 
 #define BOARD_SQUARE_SIZE 2

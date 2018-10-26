@@ -49,7 +49,7 @@
 
 #ifdef EMULATE_PTHREADS
 
-#include <assert.h>
+#include <cassert>
 #include "pthread_w.h"
 
 /*

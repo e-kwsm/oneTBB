@@ -53,13 +53,13 @@
 #define _PTHREAD_H_DEFINED
 
 #include <windows.h>
-#include <errno.h>
+#include <cerrno>
 #ifndef ENOTSUP
 #define ENOTSUP EPERM
 #endif
 
-/*  just need <stddef.h> on Windows to get size_t defined  */
-#include <stddef.h>
+/*  just need <cstddef> on Windows to get size_t defined  */
+#include <cstddef>
 
 #define ERROR_PTHREAD 1000
 #define ERROR_MODE 1001

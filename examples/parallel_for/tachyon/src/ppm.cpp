@@ -69,7 +69,7 @@
 
 #endif //__INTEL_COMPILER
 
-#include <stdio.h>
+#include <cstdio>
 #include "machine.h"
 #include "types.h"
 #include "util.h"

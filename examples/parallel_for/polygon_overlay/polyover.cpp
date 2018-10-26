@@ -22,9 +22,9 @@
 //
 #include <iostream>
 #include <algorithm>
-#include <string.h>
+#include <cstring>
 #include <cstdlib>
-#include <assert.h>
+#include <cassert>
 #include "tbb/tick_count.h"
 #include "tbb/blocked_range.h"
 #include "tbb/task_scheduler_init.h"

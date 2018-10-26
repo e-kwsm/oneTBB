@@ -53,10 +53,10 @@
  *  $Id: machine.h,v 1.2 2007-02-22 17:54:15 Exp $
  */
 
-#include <stdio.h>
+#include <cstdio>
 #include <cstdlib>
-#include <string.h>
-#include <math.h>
+#include <cstring>
+#include <cmath>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>

@@ -55,7 +55,7 @@
  * truecolor sort of file..
  */
 
-#include <stdio.h>
+#include <cstdio>
 #include "machine.h"
 #include "types.h"
 #include "util.h"

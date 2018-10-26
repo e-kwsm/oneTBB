@@ -53,7 +53,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #elif __FreeBSD__||__NetBSD__||__OpenBSD__
-#include <stdlib.h>
+#include <cstdlib>
 #else
 #include <alloca.h>
 #endif

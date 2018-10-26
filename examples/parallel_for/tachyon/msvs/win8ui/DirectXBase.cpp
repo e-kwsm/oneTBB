@@ -21,7 +21,7 @@
 #include "pch.h"
 #include "DirectXBase.h" 
 #include <windows.ui.xaml.media.dxinterop.h>
-#include <math.h>
+#include <cmath>
 
 using namespace Microsoft::WRL;
 using namespace Windows::UI::Core;

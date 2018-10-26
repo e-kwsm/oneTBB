@@ -47,9 +47,9 @@
     SUCH DAMAGE.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #define VIDEO_WINMAIN_ARGS
 #include "types.h"

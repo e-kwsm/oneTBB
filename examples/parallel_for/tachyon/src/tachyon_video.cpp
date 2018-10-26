@@ -47,9 +47,9 @@
     SUCH DAMAGE.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #include "types.h"
 #include "api.h"       /* The ray tracing library API */
