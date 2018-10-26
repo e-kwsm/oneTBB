@@ -25,14 +25,14 @@
 
 #define _CRT_SECURE_NO_DEPRECATE 1
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdarg.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstdarg>
 #include <vector>
 #include <map>
 #include <set>
 #include <string>
-#include <time.h>
+#include <ctime>
 
 using namespace std;
 typedef double value_t;

@@ -38,7 +38,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 #include <cstdlib>
-#include <math.h>
+#include <cmath>
 #include "tbb/tbb_stddef.h"
 #include <vector>
 #include <map>

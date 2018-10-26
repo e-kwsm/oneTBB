@@ -67,7 +67,7 @@ namespace Perf {
 
 #elif __linux__ || __APPLE__
 
-#include <stdint.h>
+#include <cstdint>
 
 namespace Perf {
     typedef uint64_t tick_t;

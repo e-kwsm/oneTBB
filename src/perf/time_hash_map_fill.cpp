@@ -47,7 +47,7 @@ int MAX_TABLE_SIZE = 2000000;
 //////////////////////////////////////////////////////////////////////////////////
 
 #include <cstdlib>
-#include <math.h>
+#include <cmath>
 #include "tbb/tbb_stddef.h"
 #include <vector>
 #include <map>

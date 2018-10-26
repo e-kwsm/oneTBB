@@ -51,7 +51,7 @@ int inner_work[] = {32, 8, 0 };
 //////////////////////////////////////////////////////////////////////////////
 
 #include <cstdlib>
-#include <math.h>
+#include <cmath>
 #include <algorithm>    // Need std::swap
 #include <utility>      // Need std::pair
 #include <sstream>

@@ -22,7 +22,7 @@
 #define __TIME_FRAMEWORK_H__
 
 #include <cstdlib>
-#include <math.h>
+#include <cmath>
 #include <vector>
 #include <string>
 #include <sstream>
