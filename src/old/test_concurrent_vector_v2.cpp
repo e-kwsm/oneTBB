@@ -459,7 +459,7 @@ void TestAssign() {
 //------------------------------------------------------------------------
 
 #include "tbb/task_scheduler_init.h"
-#include <math.h>
+#include <cmath>
 
 typedef unsigned long Number;
 

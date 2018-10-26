@@ -23,7 +23,7 @@
 #include "tbb/spin_mutex.h"
 #include "tbb/atomic.h"
 #include <cstring>
-#include <stdio.h>
+#include <cstdio>
 
 #if defined(_MSC_VER) && defined(_Wp64)
     // Workaround for overzealous compiler warnings in /Wp64 mode
