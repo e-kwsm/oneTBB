@@ -123,7 +123,7 @@ public:
     #pragma warning( push )
     #pragma warning( disable: 4985 )
 #endif
-#include <math.h>
+#include <cmath>
 #if _MSC_VER==1500 && !defined(__INTEL_COMPILER)
     #pragma warning( pop )
 #endif

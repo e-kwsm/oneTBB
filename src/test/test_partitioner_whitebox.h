@@ -25,7 +25,7 @@
 #include "tbb/tbb_thread.h"
 #include "tbb/enumerable_thread_specific.h"
 
-#include "string.h"
+#include "cstring"
 #include "harness_assert.h"
 #include "test_partitioner.h"
 #include <numeric>

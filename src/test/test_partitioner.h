@@ -19,7 +19,7 @@
 */
 
 #if _MSC_VER==1500 && !__INTEL_COMPILER
-    // VS2008/VC9 has an issue in math.h
+    // VS2008/VC9 has an issue in cmath
     #pragma warning( push )
     #pragma warning( disable: 4985 )
 #endif

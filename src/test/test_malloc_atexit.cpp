@@ -26,7 +26,7 @@
    by non-recursive mutex in some versions of GLIBC.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "harness_allocator_overload.h"
 
 // __TBB_malloc_safer_msize() returns 0 for unknown objects,
@@ -61,7 +61,7 @@ bool exe_isMallocOverloaded()
 #else
 #include <malloc.h>
 #endif
-#include <signal.h>
+#include <csignal>
 
 #if __linux__ && !__ANDROID__
 extern "C" {

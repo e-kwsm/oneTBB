@@ -20,7 +20,7 @@
 
 #if _USRDLL
 
-#include <stdlib.h> // for NULL
+#include <cstdlib>  // for NULL
 #include "harness_assert.h"
 #define HARNESS_CUSTOM_MAIN 1
 #define HARNESS_NO_PARSE_COMMAND_LINE 1

@@ -39,7 +39,7 @@
 #endif
 
 #if __SUNPRO_CC
-#include <stdio.h>
+#include <cstdio>
 #else
 #include <cstdio>
 #endif

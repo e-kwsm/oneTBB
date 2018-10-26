@@ -26,17 +26,17 @@
 #elif __linux__
 #include <unistd.h>
 #include <sys/sysinfo.h>
-#include <string.h>
+#include <cstring>
 #include <sched.h>
 #elif __FreeBSD__
 #include <unistd.h>
-#include <errno.h>
-#include <string.h>
+#include <cerrno>
+#include <cstring>
 #include <sys/param.h>  // Required by <sys/cpuset.h>
 #include <sys/cpuset.h>
 #endif
 
-#include <limits.h>
+#include <climits>
 
 namespace Harness {
     static int maxProcs = 0;

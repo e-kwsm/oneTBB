@@ -29,8 +29,8 @@ int TestMain() {
 }
 #else
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <vector>
 #include <string>
 #include <utility>

@@ -62,7 +62,7 @@ static unsigned char AddendHistory[MAXN];
 
 #include "tbb/atomic.h"
 #if PRINT_DEBUG
-#include <stdio.h>
+#include <cstdio>
 #include "harness_report.h"
 tbb::atomic<long> NextBodyId;
 #endif /* PRINT_DEBUG */

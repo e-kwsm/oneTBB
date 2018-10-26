@@ -22,7 +22,7 @@
 #include "tbb/task_scheduler_init.h"
 #include "tbb/concurrent_vector.h"
 #include "harness.h"
-#include <math.h>
+#include <cmath>
 #include <vector>
 #include <exception>
 #include <algorithm>

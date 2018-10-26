@@ -25,7 +25,7 @@
 
 #if __TBB_TASK_GROUP_CONTEXT
 
-#include <limits.h> // for INT_MAX
+#include <climits>  // for INT_MAX
 #include "tbb/task_scheduler_init.h"
 #include "tbb/tbb_exception.h"
 #include "tbb/task.h"

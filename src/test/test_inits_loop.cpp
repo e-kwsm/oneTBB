@@ -28,8 +28,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#include <signal.h>
-#include <errno.h>
+#include <csignal>
+#include <cerrno>
 
 bool exec_test(const char *self) {
     int status = 1;

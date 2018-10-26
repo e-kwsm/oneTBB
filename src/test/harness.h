@@ -55,8 +55,8 @@ namespace Harness {
 int TestMain ();
 
 #if __SUNPRO_CC
-    #include <stdlib.h>
-    #include <string.h>
+    #include <cstdlib>
+    #include <cstring>
     #include <ucontext.h>
 #else /* !__SUNPRO_CC */
     #include <cstdlib>
@@ -95,7 +95,7 @@ int TestMain ();
 
 #if __linux__
     #include <sys/utsname.h> /* for uname */
-    #include <errno.h>       /* for use in LinuxKernelVersion() */
+    #include <cerrno>        /* for use in LinuxKernelVersion() */
     #include <features.h>
 #endif
 // at least GLIBC 2.1 or OSX 10.5

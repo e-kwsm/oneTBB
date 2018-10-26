@@ -23,9 +23,9 @@
 #endif /*__cplusplus */
 
 #include "tbb/scalable_allocator.h"
-#include <stdio.h>
-#include <assert.h>
-#include <stdlib.h> /* for atexit */
+#include <cstdio>
+#include <cassert>
+#include <cstdlib>  /* for atexit */
 
 /*
  *  The test is to check if the scalable_allocator.h and its functions
@@ -45,7 +45,7 @@ typedef int bool;
 #define false 0
 #define true 1
 #else
-#include <stdbool.h>
+#include <cstdbool>
 #endif
 
 #if __TBB_SOURCE_DIRECTLY_INCLUDED

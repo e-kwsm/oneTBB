@@ -20,7 +20,7 @@
 
 bool __tbb_test_errno = false;
 
-#define __STDC_LIMIT_MACROS 1 // to get SIZE_MAX from stdint.h
+#define __STDC_LIMIT_MACROS 1 // to get SIZE_MAX from cstdint
 
 #include "tbb/tbb_config.h"
 
@@ -46,7 +46,7 @@ int TestMain() {
 #undef _WIN32_WINNT
 #define _WIN32_WINNT 0x0501
 #include "tbb/machine/windows_api.h"
-#include <stdio.h>
+#include <cstdio>
 
 #if _MSC_VER && defined(_MT) && defined(_DLL)
     #pragma comment(lib, "version.lib")  // to use GetFileVersionInfo*
@@ -78,11 +78,11 @@ void limitMem( size_t limit )
 // Do not test errno with static VC runtime
 #else // _WIN32 || _WIN64
 #include <sys/resource.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <errno.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cerrno>
 #include <sys/types.h>  // uint64_t on FreeBSD, needed for rlim_t
-#include <stdint.h>     // SIZE_MAX
+#include <cstdint>      // SIZE_MAX
 
 void limitMem( size_t limit )
 {
@@ -106,9 +106,9 @@ void limitMem( size_t limit )
 #define ASSERT_ERRNO(cond, msg)  ASSERT( !__tbb_test_errno || (cond), msg )
 #define CHECK_ERRNO(cond) (__tbb_test_errno && (cond))
 
-#include <time.h>
-#include <errno.h>
-#include <limits.h> // for CHAR_BIT
+#include <ctime>
+#include <cerrno>
+#include <climits>  // for CHAR_BIT
 #define __TBB_NO_IMPLICIT_LINKAGE 1
 #include "tbb/scalable_allocator.h"
 
@@ -120,7 +120,7 @@ void limitMem( size_t limit )
 #include "harness_tbb_independence.h"
 #endif
 #if __linux__
-#include <stdint.h> // uintptr_t
+#include <cstdint>  // uintptr_t
 #endif
 #if _WIN32 || _WIN64
 #include <malloc.h> // _aligned_(malloc|free|realloc)

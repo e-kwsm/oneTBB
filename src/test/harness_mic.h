@@ -28,8 +28,8 @@
 // test for unifed sources. See makefiles
 #undef HARNESS_INCOMPLETE_SOURCES
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <cstdio>
 
 #define TBB_TEST_LOW_WORKLOAD 1
 

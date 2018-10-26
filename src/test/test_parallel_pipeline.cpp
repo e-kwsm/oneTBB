@@ -26,7 +26,7 @@ int filter_node_count = 0;
 
 #include "tbb/atomic.h"
 #include "harness.h"
-#include <string.h>
+#include <cstring>
 
 #include "tbb/tbb_allocator.h"
 #include "tbb/spin_mutex.h"

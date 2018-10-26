@@ -51,8 +51,8 @@ int TestMain() {
 #include <dlfcn.h>
 #endif
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <cstdio>
 #include <stdexcept>
 
 #if TBB_USE_EXCEPTIONS

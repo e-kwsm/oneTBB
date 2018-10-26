@@ -1396,7 +1396,7 @@ public:
 };
 
 #if _MSC_VER==1500 && !defined(__INTEL_COMPILER)
-    // VS2008/VC9 seems to have an issue; limits pull in math.h
+    // VS2008/VC9 seems to have an issue; limits pull in cmath
     #pragma warning( push )
     #pragma warning( disable: 4985 )
 #endif

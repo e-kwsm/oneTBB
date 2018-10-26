@@ -46,14 +46,14 @@ const int SseModes[NumSseModes] = { 0, SSE_DAZ, SSE_FTZ, SSE_DAZ | SSE_FTZ };
 // and when inline asm is not available, the library uses out of line assembly which is not exported
 // thus reimplementing them here
 
-#include <float.h>
+#include <cfloat>
 
 inline void __TBB_get_cpu_ctl_env ( tbb::internal::cpu_ctl_env* fe ) {
     fe->x87cw = short(_control87(0, 0) & _MCW_RC) << 2;
     fe->mxcsr = _mm_getcsr();
 }
 inline void __TBB_set_cpu_ctl_env ( const tbb::internal::cpu_ctl_env* fe ) {
-    ASSERT( (fe->x87cw & FE_RND_MODE_MASK) == ((fe->x87cw & FE_RND_MODE_MASK) >> 2 & _MCW_RC) << 2, "Check float.h constants" );
+    ASSERT( (fe->x87cw & FE_RND_MODE_MASK) == ((fe->x87cw & FE_RND_MODE_MASK) >> 2 & _MCW_RC) << 2, "Check cfloat constants" );
     _control87( (fe->x87cw & FE_RND_MODE_MASK) >> 6, _MCW_RC );
     _mm_setcsr( fe->mxcsr );
 }
@@ -113,7 +113,7 @@ inline void SetRoundingMode ( int mode ) {
 
 #else /* Other archs */
 
-#include <fenv.h>
+#include <cfenv>
 
 const int RND_MODE_MASK = FE_TONEAREST | FE_DOWNWARD | FE_UPWARD | FE_TOWARDZERO;
 

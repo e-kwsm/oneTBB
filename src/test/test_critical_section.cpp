@@ -26,7 +26,7 @@
 #include "tbb/tick_count.h"
 #include "harness_assert.h"
 #include "harness.h"
-#include <math.h>
+#include <cmath>
 
 #include "harness_barrier.h"
 Harness::SpinBarrier sBarrier;

@@ -20,7 +20,7 @@
 
 #define HARNESS_NO_PARSE_COMMAND_LINE 1
 
-#include <stdio.h>
+#include <cstdio>
 #include "tbb/scalable_allocator.h"
 
 class minimalAllocFree {

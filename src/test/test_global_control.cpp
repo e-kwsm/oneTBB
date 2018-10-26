@@ -44,7 +44,7 @@ void TestStackSizeSimpleControl()
 
 #include "harness_concurrency_tracker.h"
 #include "tbb/task_scheduler_init.h"
-#include <limits.h>   // for UINT_MAX
+#include <climits>    // for UINT_MAX
 
 struct StackSizeRun: NoAssign {
     int                   num_threads;

@@ -62,12 +62,12 @@
 
 #include "harness_report.h"
 #include "harness_assert.h"
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #if !__APPLE__
 #include <malloc.h>
 #endif
-#include <stdio.h>
+#include <cstdio>
 #include <new>
 #if MALLOC_UNIXLIKE_OVERLOAD_ENABLED || MALLOC_ZONE_OVERLOAD_ENABLED
 #include <unistd.h> // for sysconf
@@ -75,7 +75,7 @@
 #endif
 
 #if __linux__
-#include <stdint.h> // for uintptr_t
+#include <cstdint>  // for uintptr_t
 
 extern "C" {
 void *__libc_malloc(size_t size);
@@ -97,7 +97,7 @@ size_t dlmalloc_usable_size(const void *ptr);
 #define malloc_usable_size(p) malloc_size(p)
 
 #elif _WIN32
-#include <stddef.h>
+#include <cstddef>
 #if __MINGW32__
 #include <unistd.h>
 #else
