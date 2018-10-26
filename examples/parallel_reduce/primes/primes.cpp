@@ -33,7 +33,7 @@
 #include <cassert>
 #include <cstdio>
 #include <cstring>
-#include <math.h>
+#include <cmath>
 #include <cstdlib>
 #include <cctype>
 #include "tbb/parallel_reduce.h"
