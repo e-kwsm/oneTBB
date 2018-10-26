@@ -20,9 +20,9 @@
 
 
 #include "tbbmalloc_internal.h"
-#include <errno.h>
+#include <cerrno>
 #include <new>        /* for placement new */
-#include <string.h>   /* for memset */
+#include <cstring>    /* for memset */
 
 #include "../tbb/tbb_version.h"
 #include "../tbb/itt_notify.h" // for __TBB_load_ittnotify()

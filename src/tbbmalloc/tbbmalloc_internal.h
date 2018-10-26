@@ -45,10 +45,10 @@
   #define _GLIBCXX_NESTED_EXCEPTION_H /* prevents nested_exception.h inclusion */
 #endif
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h> // for CHAR_BIT
-#include <string.h> // for memset
+#include <cstdio>
+#include <cstdlib>
+#include <climits>  // for CHAR_BIT
+#include <cstring>  // for memset
 #if MALLOC_CHECK_RECURSION
 #include <new>        /* for placement new */
 #endif

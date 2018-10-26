@@ -21,7 +21,7 @@
 #if __linux__ && !__ANDROID__
 // include <bits/c++config.h> indirectly so that <cstdlib> is not included
 #include <cstddef>
-// include <features.h> indirectly so that <stdlib.h> is not included
+// include <features.h> indirectly so that <cstdlib> is not included
 #include <unistd.h>
 // Working around compiler issue with Anaconda's gcc 7.3 compiler package.
 // New gcc ported for old libc may provide their inline implementation
@@ -31,7 +31,7 @@
 #if defined(__GLIBC_PREREQ) && !__GLIBC_PREREQ(2, 16) && _GLIBCXX_HAVE_ALIGNED_ALLOC
 // tell <cstdlib> that there is no aligned_alloc
 #undef _GLIBCXX_HAVE_ALIGNED_ALLOC
-// trick <stdlib.h> to define another symbol instead
+// trick <cstdlib> to define another symbol instead
 #define aligned_alloc __hidden_redefined_aligned_alloc
 // Fix the state and undefine the trick
 #include <cstdlib>
@@ -131,7 +131,7 @@ static inline void* InternalOperatorNew(size_t sz) {
 #endif
 
 /*** service functions and variables ***/
-#include <string.h> // for memset
+#include <cstring>  // for memset
 #include <unistd.h> // for sysconf
 
 static long memoryPageSize;
@@ -357,7 +357,7 @@ void operator delete[](void* ptr, const std::nothrow_t&) __TBB_NO_THROW {
 
 #if !__TBB_WIN8UI_SUPPORT
 
-#include <stdio.h>
+#include <cstdio>
 #include "tbb_function_replacement.h"
 #include "shared_utils.h"
 

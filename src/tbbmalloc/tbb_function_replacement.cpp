@@ -27,8 +27,8 @@
 
 #include <windows.h>
 #include <new>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include "tbb_function_replacement.h"
 
 #include "tbb/tbb_stddef.h"

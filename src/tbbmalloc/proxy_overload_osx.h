@@ -51,7 +51,7 @@
 #include <AvailabilityMacros.h>
 #include <malloc/malloc.h>
 #include <mach/mach.h>
-#include <stdlib.h>
+#include <cstdlib>
 
 static kern_return_t enumerator(task_t, void *, unsigned, vm_address_t,
                                 memory_reader_t, vm_range_recorder_t)

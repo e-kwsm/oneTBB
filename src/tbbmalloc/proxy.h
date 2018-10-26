@@ -30,7 +30,7 @@
 #define MALLOC_CHECK_RECURSION 1
 #endif
 
-#include <stddef.h>
+#include <cstddef>
 
 extern "C" {
     void * scalable_malloc(size_t size);

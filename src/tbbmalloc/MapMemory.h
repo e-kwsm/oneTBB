@@ -21,7 +21,7 @@
 #ifndef _itt_shared_malloc_MapMemory_H
 #define _itt_shared_malloc_MapMemory_H
 
-#include <stdlib.h>
+#include <cstdlib>
 
 void *ErrnoPreservingMalloc(size_t bytes)
 {

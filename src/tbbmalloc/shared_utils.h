@@ -22,7 +22,7 @@
 #define __TBB_shared_utils_H
 
 // Include files containing declarations of intptr_t and uintptr_t
-#include <stddef.h>  // size_t
+#include <cstddef>   // size_t
 #if _MSC_VER
 typedef unsigned __int16 uint16_t;
 typedef unsigned __int32 uint32_t;
@@ -31,7 +31,7 @@ typedef unsigned __int64 uint64_t;
   #define UINTPTR_MAX SIZE_MAX
  #endif
 #else // _MSC_VER
-#include <stdint.h>
+#include <cstdint>
 #endif
 
 /*
@@ -73,7 +73,7 @@ T min ( const T& val1, const T& val2 ) {
  * Functions to parse files information (system files for example)
  */
 
-#include <stdio.h>
+#include <cstdio>
 
 #if defined(_MSC_VER) && (_MSC_VER<1900) && !defined(__INTEL_COMPILER)
     // Suppress overzealous compiler warnings that default ctor and assignment
