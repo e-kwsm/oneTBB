@@ -21,7 +21,7 @@
 // This file is compiled with C++, but linked with a program written in C.
 // The intent is to find dependencies on the C++ run-time.
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "../../../include/tbb/tbb_stddef.h" // __TBB_override
 #include "harness_defs.h"
 #define RML_PURE_VIRTUAL_HANDLER abort

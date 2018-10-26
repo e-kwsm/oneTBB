@@ -20,7 +20,7 @@
 
 #include "../include/rml_tbb.h"
 #include "tbb/dynamic_link.h"
-#include <assert.h>
+#include <cassert>
 
 namespace tbb {
 namespace internal {

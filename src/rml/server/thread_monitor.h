@@ -33,12 +33,12 @@
 #endif
 #elif USE_PTHREAD
 #include <pthread.h>
-#include <string.h>
-#include <stdlib.h>
+#include <cstring>
+#include <cstdlib>
 #else
 #error Unsupported platform
 #endif
-#include <stdio.h>
+#include <cstdio>
 #include "tbb/itt_notify.h"
 #include "tbb/atomic.h"
 #include "tbb/semaphore.h"

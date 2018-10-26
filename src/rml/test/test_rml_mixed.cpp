@@ -82,7 +82,7 @@ public:
 #define ROOT_DIR_REST 2
 #else
 #include <unistd.h>
-#include <limits.h>
+#include <climits>
 #define PATH_LEN PATH_MAX+1
 #define SLASH '/'
 #define ROOT_DIR "/"

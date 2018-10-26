@@ -20,7 +20,7 @@
 
 #include "rml_omp.h"
 #include "omp_dynamic_link.h"
-#include <assert.h>
+#include <cassert>
 
 namespace __kmp {
 namespace rml {

@@ -21,12 +21,12 @@
 #include <cstddef>
 #include <cstdlib>
 #include <cstdio>
-#include <float.h>
-#include <math.h>
-#include <time.h>
+#include <cfloat>
+#include <cmath>
+#include <ctime>
 
 #include <omp.h>
-#include <assert.h>
+#include <cassert>
 
 #include "thread_level.h"
 

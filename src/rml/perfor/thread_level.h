@@ -23,7 +23,7 @@
 #define __THREAD_LEVEL_H
 #include <cstdio>
 #include <omp.h>
-#include <assert.h>
+#include <cassert>
 #include "tbb/atomic.h"
 #include "tbb/tick_count.h"
 
