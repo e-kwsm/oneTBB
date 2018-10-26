@@ -18,8 +18,8 @@
 
 */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <cstdio>
 #include <stdexcept>
 
 #if _WIN32
