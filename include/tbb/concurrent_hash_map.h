@@ -41,7 +41,7 @@
 #include <typeinfo>
 #endif
 #if __TBB_STATISTICS
-#include <stdio.h>
+#include <cstdio>
 #endif
 
 namespace tbb {

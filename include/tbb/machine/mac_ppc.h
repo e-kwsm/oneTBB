@@ -24,7 +24,7 @@
 
 #define __TBB_machine_gcc_power_H
 
-#include <stdint.h>
+#include <cstdint>
 #include <unistd.h>
 
 // TODO: rename to gcc_power.h?

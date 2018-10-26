@@ -25,7 +25,7 @@
 #define __TBB_msvc_armv7_H
 
 #include <intrin.h>
-#include <float.h>
+#include <cfloat>
 
 #define __TBB_WORDSIZE 4
 

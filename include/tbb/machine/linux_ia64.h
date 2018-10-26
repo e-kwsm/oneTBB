@@ -24,7 +24,7 @@
 
 #define __TBB_machine_linux_ia64_H
 
-#include <stdint.h>
+#include <cstdint>
 #include <ia64intrin.h>
 
 #define __TBB_WORDSIZE 8

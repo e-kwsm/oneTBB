@@ -51,7 +51,7 @@ namespace tbb {
 #if (_WIN32||_WIN64||__linux__) && !__MINGW32__ && TBB_USE_THREADING_TOOLS
 
 #if _WIN32||_WIN64
-#include <stdlib.h>  /* mbstowcs_s */
+#include <cstdlib>   /* mbstowcs_s */
 #endif
 #include "tbb_stddef.h"
 

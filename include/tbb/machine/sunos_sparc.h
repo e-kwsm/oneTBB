@@ -25,7 +25,7 @@
 
 #define __TBB_machine_sunos_sparc_H
 
-#include <stdint.h>
+#include <cstdint>
 #include <unistd.h>
 
 #define __TBB_WORDSIZE 8

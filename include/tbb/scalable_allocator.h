@@ -22,9 +22,9 @@
 #define __TBB_scalable_allocator_H
 /** @file */
 
-#include <stddef.h> /* Need ptrdiff_t and size_t from here. */
+#include <cstddef>  /* Need ptrdiff_t and size_t from here. */
 #if !_MSC_VER
-#include <stdint.h> /* Need intptr_t from here. */
+#include <cstdint>  /* Need intptr_t from here. */
 #endif
 
 #if !defined(__cplusplus) && __ICC==1100

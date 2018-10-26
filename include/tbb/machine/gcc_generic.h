@@ -24,7 +24,7 @@
 
 #define __TBB_machine_gcc_generic_H
 
-#include <stdint.h>
+#include <cstdint>
 #include <unistd.h>
 
 #define __TBB_WORDSIZE __SIZEOF_POINTER__

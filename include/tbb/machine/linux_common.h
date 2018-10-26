@@ -32,8 +32,8 @@
 #if defined(SYS_futex)
 
 #define __TBB_USE_FUTEX 1
-#include <limits.h>
-#include <errno.h>
+#include <climits>
+#include <cerrno>
 // Unfortunately, some versions of Linux do not have a header that defines FUTEX_WAIT and FUTEX_WAKE.
 
 #ifdef FUTEX_WAIT

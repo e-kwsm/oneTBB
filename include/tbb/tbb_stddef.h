@@ -124,7 +124,7 @@
     #undef __TBB_tbb_windef_H
 #endif
 #if !defined(_MSC_VER) || _MSC_VER>=1600
-    #include <stdint.h>
+    #include <cstdint>
 #endif
 
 //! Type for an assertion handler

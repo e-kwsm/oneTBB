@@ -25,7 +25,7 @@
 #include "machine/windows_api.h"
 #else
 #include <pthread.h>
-#include <errno.h>
+#include <cerrno>
 #endif  // _WIN32||WIN64
 
 #include "tbb_stddef.h"

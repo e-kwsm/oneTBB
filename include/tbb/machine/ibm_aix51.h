@@ -29,7 +29,7 @@
 #define __TBB_WORDSIZE 8
 #define __TBB_ENDIANNESS __TBB_ENDIAN_BIG // assumption based on operating system
 
-#include <stdint.h>
+#include <cstdint>
 #include <unistd.h>
 #include <sched.h>
 

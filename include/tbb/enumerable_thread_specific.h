@@ -30,7 +30,7 @@
 #include "internal/_template_helpers.h"
 #include "internal/_tbb_hash_compare_impl.h"
 #include "tbb_profiling.h"
-#include <string.h>  // for memcpy
+#include <cstring>   // for memcpy
 
 #if _WIN32||_WIN64
 #include "machine/windows_api.h"

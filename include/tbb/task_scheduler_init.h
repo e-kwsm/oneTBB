@@ -22,7 +22,7 @@
 #define __TBB_task_scheduler_init_H
 
 #include "tbb_stddef.h"
-#include "limits.h"
+#include "climits"
 #if __TBB_SUPPORTS_WORKERS_WAITING_IN_TERMINATE
 #include <new> // nothrow_t
 #endif
