@@ -27,8 +27,8 @@
 #include "tbb/task_group.h"
 #include "tbb/tick_count.h"
 
-#include <math.h>
-#include <stdio.h>
+#include <cmath>
+#include <cstdio>
 
 // Included for __TBB_CPP11_LAMBDAS_PRESENT definition
 #include "tbb/tbb_config.h"

@@ -20,7 +20,7 @@
 
 #define VIDEO_WINMAIN_ARGS
 
-#include <stdio.h>
+#include <cstdio>
 #include <iostream>
 
 #include "fractal.h"
