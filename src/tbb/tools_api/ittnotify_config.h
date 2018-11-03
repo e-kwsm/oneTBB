@@ -88,7 +88,7 @@
 #else  /* ITT_PLATFORM==ITT_PLATFORM_WIN */
 #include <cstdint>
 #if defined(UNICODE) || defined(_UNICODE)
-#include <wchar.h>
+#include <cwchar>
 #endif /* UNICODE || _UNICODE */
 #endif /* ITT_PLATFORM==ITT_PLATFORM_WIN */
 
@@ -216,7 +216,7 @@ typedef CRITICAL_SECTION  mutex_t;
 #else  /* ITT_PLATFORM==ITT_PLATFORM_WIN */
 #include <dlfcn.h>
 #if defined(UNICODE) || defined(_UNICODE)
-#include <wchar.h>
+#include <cwchar>
 #endif /* UNICODE */
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE 1 /* need for PTHREAD_MUTEX_RECURSIVE */

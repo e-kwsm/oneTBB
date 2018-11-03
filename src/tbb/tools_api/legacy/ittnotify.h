@@ -93,7 +93,7 @@
 #else  /* ITT_PLATFORM==ITT_PLATFORM_WIN */
 #include <cstdint>
 #if defined(UNICODE) || defined(_UNICODE)
-#include <wchar.h>
+#include <cwchar>
 #endif /* UNICODE || _UNICODE */
 #endif /* ITT_PLATFORM==ITT_PLATFORM_WIN */
 
