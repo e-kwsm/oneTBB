@@ -28,6 +28,7 @@ TBBLIB_DEBUG = -ltbb_debug
 
 ifneq (,$(findstring mic, $(offload)))
 override CXXFLAGS += -qoffload-arch=$(offload) -qopt-report-phase:offload -D__TBB_MIC_OFFLOAD=1
+override CPPFLAGS += -D__TBB_MIC_OFFLOAD=1
 # Replace -ltbb with -tbb in the offload mode
 TBBLIB = -tbb
 TBBLIB_DEBUG += -qoffload-option,mic,ld,"-ltbb_debug"
@@ -38,10 +39,10 @@ ifeq ($(target), android)
 LIBS+= --sysroot=$(SYSROOT)
 run_cmd=../../common/android.linux.launcher.sh
 else
-LIBS+= -lrt 
+LIBS+= -lrt
 endif
 else ifeq ($(shell uname), Darwin)
-override CXXFLAGS += -Wl,-rpath,$(TBBROOT)/lib
+override LDFLAGS += -Wl,-rpath,$(TBBROOT)/lib
 endif
 
 # autodetect C++11 support
@@ -51,17 +52,17 @@ all:	release test
 
 release: *.cpp
 ifeq ($(offload),)
-	$(CXX) -O2 -DNDEBUG $(CXXFLAGS) -o sub_string_finder sub_string_finder.cpp $(TBBLIB) $(LIBS) $(CXX0XFLAGS)
-	$(CXX) -O2 -DNDEBUG $(CXXFLAGS) -o sub_string_finder_pretty sub_string_finder_pretty.cpp $(TBBLIB) $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O2 -DNDEBUG $(CPPFLAGS) $(CXXFLAGS) -o sub_string_finder sub_string_finder.cpp $(TBBLIB) $(LIBS) $(CXX0XFLAGS) $(LDFLAGS)
+	$(CXX) -O2 -DNDEBUG $(CPPFLAGS) $(CXXFLAGS) -o sub_string_finder_pretty sub_string_finder_pretty.cpp $(TBBLIB) $(LIBS) $(CXX0XFLAGS) $(LDFLAGS)
 endif
-	$(CXX) -O2 -DNDEBUG $(CXXFLAGS) -o sub_string_finder_extended sub_string_finder_extended.cpp $(TBBLIB) $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O2 -DNDEBUG $(CPPFLAGS) $(CXXFLAGS) -o sub_string_finder_extended sub_string_finder_extended.cpp $(TBBLIB) $(LIBS) $(CXX0XFLAGS) $(LDFLAGS)
 
 debug: *.cpp
 ifeq ($(offload),)
-	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CXXFLAGS) -o sub_string_finder sub_string_finder.cpp $(TBBLIB_DEBUG) $(LIBS) $(CXX0XFLAGS)
-	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CXXFLAGS) -o sub_string_finder_pretty sub_string_finder_pretty.cpp  $(TBBLIB_DEBUG) $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CPPFLAGS) $(CXXFLAGS) -o sub_string_finder sub_string_finder.cpp $(TBBLIB_DEBUG) $(LIBS) $(CXX0XFLAGS) $(LDFLAGS)
+	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CPPFLAGS) $(CXXFLAGS) -o sub_string_finder_pretty sub_string_finder_pretty.cpp  $(TBBLIB_DEBUG) $(LIBS) $(CXX0XFLAGS) $(LDFLAGS)
 endif
-	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CXXFLAGS) -o sub_string_finder_extended sub_string_finder_extended.cpp $(TBBLIB_DEBUG) $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CPPFLAGS) $(CXXFLAGS) -o sub_string_finder_extended sub_string_finder_extended.cpp $(TBBLIB_DEBUG) $(LIBS) $(CXX0XFLAGS) $(LDFLAGS)
 
 clean:
 	$(RM) sub_string_finder sub_string_finder_extended sub_string_finder_pretty *.o *.d
