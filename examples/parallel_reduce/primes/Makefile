@@ -27,7 +27,7 @@ TBBLIB = -ltbb
 TBBLIB_DEBUG = -ltbb_debug
 
 ifeq ($(offload), mic)
-override CXXFLAGS += -D__TBB_MIC_OFFLOAD=1
+override CPPFLAGS += -D__TBB_MIC_OFFLOAD=1
 # Replace -ltbb with -tbb in the offload mode
 TBBLIB = -tbb
 TBBLIB_DEBUG += -offload-option,mic,ld,"-ltbb_debug"
@@ -38,10 +38,10 @@ ifeq ($(target), android)
 LIBS+= --sysroot=$(SYSROOT)
 run_cmd=../../common/android.linux.launcher.sh
 else
-LIBS+= -lrt 
+LIBS+= -lrt
 endif
 else ifeq ($(shell uname), Darwin)
-override CXXFLAGS += -Wl,-rpath,$(TBBROOT)/lib
+override LDFLAGS += -Wl,-rpath,$(TBBROOT)/lib
 endif
 
 # autodetect C++11 support
@@ -49,16 +49,16 @@ include ../../common/examples-common.inc
 
 all:	release test
 
-release: main.cpp primes.cpp 
-	$(CXX) -O2 -DNDEBUG $(CXXFLAGS) -o $(PROG) $^ $(TBBLIB) $(LIBS) $(CXX0XFLAGS)
+release: main.cpp primes.cpp
+	$(CXX) -O2 -DNDEBUG $(CPPFLAGS) $(CXXFLAGS) -o $(PROG) $^ $(LDFLAGS) $(TBBLIB) $(LIBS) $(CXX0XFLAGS)
 
 debug: main.cpp primes.cpp
-	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CXXFLAGS) -o $(PROG) $^ $(TBBLIB_DEBUG) $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CPPFLAGS) $(CXXFLAGS) -o $(PROG) $^ $(TBBLIB_DEBUG) $(LDFLAGS) $(LIBS) $(CXX0XFLAGS)
 
 clean:
 	$(RM) $(PROG) *.o *.d
 
-test: 
+test:
 	$(run_cmd) ./$(PROG) $(ARGS)
 
 perf_build: release
