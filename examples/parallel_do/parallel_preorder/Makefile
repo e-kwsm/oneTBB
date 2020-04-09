@@ -29,10 +29,10 @@ ifeq ($(target), android)
 LIBS+= --sysroot=$(SYSROOT)
 run_cmd=../../common/android.linux.launcher.sh
 else
-LIBS+= -lrt 
+LIBS+= -lrt
 endif
 else ifeq ($(shell uname), Darwin)
-override CXXFLAGS += -Wl,-rpath,$(TBBROOT)/lib
+override LDFLAGS += -Wl,-rpath,$(TBBROOT)/lib
 endif
 
 # autodetect C++11 support
@@ -41,10 +41,10 @@ include ../../common/examples-common.inc
 all:	release test
 
 release: *.cpp
-	$(CXX) -O2 -DNDEBUG $(CXXFLAGS) -o $(PROG) $^ -ltbb $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O2 -DNDEBUG $(CPPFLAGS) $(CXXFLAGS) -o $(PROG) $^ $(LDFLAGS) -ltbb $(LIBS) $(CXX0XFLAGS)
 
 debug: *.cpp
-	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CXXFLAGS) -o $(PROG) $^ -ltbb_debug $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CPPFLAGS) $(CXXFLAGS) -o $(PROG) $^ $(LDFLAGS) -ltbb_debug $(LIBS) $(CXX0XFLAGS)
 
 clean:
 	$(RM) $(PROG) *.o *.d
