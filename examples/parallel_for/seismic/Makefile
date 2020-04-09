@@ -27,7 +27,8 @@ TBBLIB = -ltbb
 TBBLIB_DEBUG = -ltbb_debug
 
 ifeq ($(offload), mic)
-override CXXFLAGS += -D__TBB_MIC_OFFLOAD=1 -offload-attribute-target=mic
+override CPPFLAGS += -D__TBB_MIC_OFFLOAD=1
+override CXXFLAGS += -offload-attribute-target=mic
 # Replace -ltbb with -tbb in the offload mode
 TBBLIB = -ltbb
 TBBLIB_DEBUG += -offload-option,mic,ld,"-ltbb_debug"
@@ -43,9 +44,9 @@ include ../../common/gui/Makefile.gmake
 override CXXFLAGS += $(UI_CXXFLAGS)
 
 ifeq ($(shell uname), Linux)
-LIBS+= -lrt 
+LIBS+= -lrt
 else ifeq ($(shell uname), Darwin)
-override CXXFLAGS += -Wl,-rpath,$(TBBROOT)/lib
+override LDFLAGS += -Wl,-rpath,$(TBBROOT)/lib
 endif
 
 # autodetect C++11 support
@@ -63,15 +64,15 @@ endif # macOS*
 
 release: resources
 ifeq ($(UI),mac)
-	$(CXX_UI) -O2 -DNDEBUG $(CXXFLAGS) -c $(MACUISOURCES) $(CXX0XFLAGS)
+	$(CXX_UI) -O2 -DNDEBUG $(CPPFLAGS) $(CXXFLAGS) -c $(MACUISOURCES) $(CXX0XFLAGS) $(LDFLAGS)
 endif # macOS
-	$(CXX) -O2 -DNDEBUG $(CXXFLAGS) -o $(EXE) $(SOURCES) $(MACUIOBJS) $(TBBLIB) $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O2 -DNDEBUG $(CPPFLAGS) $(CXXFLAGS) -o $(EXE) $(SOURCES) $(MACUIOBJS) $(LDFLAGS) $(TBBLIB) $(LIBS) $(CXX0XFLAGS)
 
 debug: resources
 ifeq ($(UI),mac)
-	$(CXX_UI) -g -O0 -DTBB_USE_DEBUG $(CXXFLAGS) -c $(MACUISOURCES) $(CXX0XFLAGS)
+	$(CXX_UI) -g -O0 -DTBB_USE_DEBUG $(CPPFLAGS) $(CXXFLAGS) -c $(MACUISOURCES) $(CXX0XFLAGS)
 endif # macOS
-	$(CXX) -g -O0 -DTBB_USE_DEBUG $(CXXFLAGS) -o $(EXE) $(SOURCES) $(MACUIOBJS) $(TBBLIB_DEBUG) $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -g -O0 -DTBB_USE_DEBUG $(CPPFLAGS) $(CXXFLAGS) -o $(EXE) $(SOURCES) $(MACUIOBJS) $(LDFLAGS) $(TBBLIB_DEBUG) $(LIBS) $(CXX0XFLAGS)
 
 clean:
 	$(RM) $(EXE) *.o *.d
