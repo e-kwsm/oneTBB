@@ -24,9 +24,9 @@ CXX=icc
 endif # icc
 
 ifeq ($(shell uname), Linux)
-LIBS+= -lrt 
+LIBS+= -lrt
 else ifeq ($(shell uname), Darwin)
-override CXXFLAGS += -Wl,-rpath,$(TBBROOT)/lib
+override LDFLAGS += -Wl,-rpath,$(TBBROOT)/lib
 endif
 
 include ../../common/gui/Makefile.gmake
@@ -50,15 +50,15 @@ endif # macOS*
 
 release: $(SOURCES) resources
 ifeq ($(UI),mac)
-	$(CXX_UI) -O2 -DNDEBUG $(CXXFLAGS) -c $(MACUISOURCES) $(CXX0XFLAGS)
+	$(CXX_UI) -O2 -DNDEBUG $(CXXFLAGS) -c $(MACUISOURCES) $(CXX0XFLAGS) $(LDFLAGS)
 endif # macOS
-	$(CXX) -O2 -DNDEBUG $(CXXFLAGS) -o $(EXE) $(SOURCES) $(MACUIOBJS) -ltbb $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O2 -DNDEBUG $(CXXFLAGS) -o $(EXE) $(SOURCES) $(MACUIOBJS) $(LDFLAGS) -ltbb $(LIBS) $(CXX0XFLAGS)
 
 debug: resources
 ifeq ($(UI),mac)
-	$(CXX_UI) -g -O0 -DTBB_USE_DEBUG $(CXXFLAGS) -c $(MACUISOURCES) $(CXX0XFLAGS)
+	$(CXX_UI) -g -O0 -DTBB_USE_DEBUG $(CXXFLAGS) -c $(MACUISOURCES) $(CXX0XFLAGS) $(LDFLAGS)
 endif # macOS
-	$(CXX) -g -O0 -DTBB_USE_DEBUG $(CXXFLAGS) -o $(EXE) $(SOURCES) $(MACUIOBJS) -ltbb_debug $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -g -O0 -DTBB_USE_DEBUG $(CXXFLAGS) -o $(EXE) $(SOURCES) $(MACUIOBJS) $(LDFLAGS) -ltbb_debug $(LIBS) $(CXX0XFLAGS)
 
 clean:
 	$(RM) $(EXE) *.o *.d
