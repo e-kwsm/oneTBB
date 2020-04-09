@@ -42,7 +42,7 @@ LIBS+= -lrt
 endif
 else
 ifeq ($(shell uname),Darwin)
-override CXXFLAGS += -Wl,-rpath,$(TBBROOT)/lib
+override LDFLAGS += -Wl,-rpath,$(TBBROOT)/lib
 override OPENCL_LIB=-framework OpenCL
 endif
 endif
@@ -50,12 +50,13 @@ endif
 all: release test
 
 release: *.cpp
-	$(CXX) -O2 -DNDEBUG $(CXXFLAGS) -o $(PROG) $^ $(TBBLIB) $(OPENCL_LIB) $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O2 -DNDEBUG $(CPPFLAGS) $(CXXFLAGS) -o $(PROG) $^ $(LDFLAGS) $(TBBLIB) $(OPENCL_LIB) $(LIBS) $(CXX0XFLAGS)
 
 debug: *.cpp
-	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CXXFLAGS) -o $(PROG) $^ $(TBBLIB_DEBUG) $(OPENCL_LIB) $(LIBS) $(CXX0XFLAGS)
+	$(CXX) -O0 -g -DTBB_USE_DEBUG $(CPPFLAGS) $(CXXFLAGS) -o $(PROG) $^ $(LDFLAGS) $(TBBLIB_DEBUG) $(OPENCL_LIB) $(LIBS) $(CXX0XFLAGS)
 
-profile: override CXXFLAGS += -DTBB_USE_THREADING_TOOLS -g
+profile: override CXXFLAGS += -g
+profile: override CPPFLAGS += -DTBB_USE_THREADING_TOOLS
 profile: release
 
 clean:
