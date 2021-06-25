@@ -114,7 +114,7 @@ static inline void* InternalOperatorNew(size_t sz) {
 #endif
 
 /*** service functions and variables ***/
-#include <string.h> // for memset
+#include <cstring>  // for memset
 #include <unistd.h> // for sysconf
 
 static long memoryPageSize;
