@@ -234,7 +234,7 @@ public:
     market_concurrent_monitor& get_wait_list() { return my_sleep_monitor; }
 
 #if __TBB_ENQUEUE_ENFORCED_CONCURRENCY
-    //! Imlpementation of mandatory concurrency enabling
+    //! Implementation of mandatory concurrency enabling
     void enable_mandatory_concurrency_impl ( arena *a );
 
     //! Inform the external thread that there is an arena with mandatory concurrency

@@ -316,7 +316,7 @@ template <typename T> using supports_proportional_splitting = typename std::is_c
 
 //! A helper class to create a proportional_split object for a given type of Range.
 /** If the Range has proportional_split constructor,
-    then created object splits a provided value in an implemenation-defined proportion;
+    then created object splits a provided value in an implementation-defined proportion;
     otherwise it represents equal-size split. */
 // TODO: check if this helper can be a nested class of proportional_mode.
 template <typename Range, typename = void>
